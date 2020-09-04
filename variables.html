@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap Estilos -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <!-- Iconos -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+
+
+  <title>Dashboard | Variables</title>
+</head>
+
+<body>
+  <!-- toggled -->
+  <div class="d-flex " id="wrapper">
+    <!-- Sidebar -->
+    <div class="border-right" id="sidebar-wrapper">
+      <div class="cerrar" id="cerrar-toggle"><span id="cerrar-sidebar"></span></div>
+      <div class="sidebar-heading">
+        <img class="icono-perfil" src="img/pngocean.com.png">
+        <h3><b>Admin</b></h3>
+      </div>
+      <div class="items-sidebar list-group list-group-flush">
+        <a href="index.html" class="list-group-item sidebar-item"><span class="icon-sun"></span> Luminarias</a>
+        <a href="variables.html" class="list-group-item sidebar-item"><span class="icon-stats-bars"></span> Variables</a>
+        <a href="consumo.html" class="list-group-item sidebar-item"><span class="icon-stats-dots"></span> Consumo</a>
+      </div>
+      <div class="sidebar-footer">
+        <img src="img/SENA-Logo.png">
+      </div>
+    </div>
+
+    <!-- Contenido de la Pagina -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-light bg-light border-bottom">
+        <div id="menu-toggle"><span id="abrir-sidebar"></span></div>
+
+        <div class="links" id="navbarSupportedContent">
+          <ul>
+            <li><a href="#">Salir</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Variables -->
+      <div class="container-fluid">
+        <h1 class="mt-4">Variables</h1>
+        <main>
+          <table id="tabla" class="tabla">
+            <thead class="tablehead">
+              <th>Luminaria #</th>
+              <th>Corriente</th>
+              <th>Voltaje</th>
+              <th>Potencia</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Luminaria 1</td>
+                <td>---</td>
+                <td>---</td>
+                <td>---</td>
+              </tr>
+              <tr>
+                <td>Luminaria 2</td>
+                <td>---</td>
+                <td>---</td>
+                <td>---</td>
+              </tr>
+              <tr>
+                <td>Luminaria 3</td>
+                <td>---</td>
+                <td>---</td>
+                <td>---</td>
+              </tr>
+              
+            </tbody>
+            
+          </table>
+          <div class="loader" id="loader"></div>
+          <div class="cargar-datos">
+            <button id="btn_cargar_datos">Cargar Datos</button>
+          </div>
+        </main>
+      </div>
+      <!-- Fin Variables -->
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap/jquery.min.js"></script>
+
+  <!-- Activacion - Desactivacion Sidabar -->
+  <script>
+    var estado = 0;
+    document.getElementById("abrir-sidebar").classList.add("icon-menu");
+    document.getElementById("menu-toggle").addEventListener('click', function (e) {
+      e.preventDefault(e);
+      if (estado == 0) {
+        document.getElementById("wrapper").classList.add("toggled");
+        document.getElementById("abrir-sidebar").classList.add("icon-menu");
+        estado = 1;
+      } else {
+        document.getElementById("wrapper").classList.remove("toggled");
+        document.getElementById("abrir-sidebar").classList.add("icon-menu");
+        estado = 0;
+      }
+    });
+  </script>
+</body>
+
+</html>
