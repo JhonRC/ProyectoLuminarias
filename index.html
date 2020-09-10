@@ -2,132 +2,218 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap Estilos -->
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-  <!-- Iconos -->
-  <link rel="stylesheet" href="css/fonts.css">
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="stylesheet" href="css/sidebar.css">
-
-
-  <title>Dashboard | Luminarias</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <!-- --------- -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/Chart.min.js"></script>
+    <title>Proyecto</title>
 </head>
 
 <body>
-  <!-- toggled -->
-  <div class="d-flex " id="wrapper">
-    <!-- Sidebar -->
-    <div class="border-right" id="sidebar-wrapper">
+    <div class="container-fluid">
+        <nav class="row navbar navbar-dark bg-dark justify-content-between">
+            <div class="col-12 col-sm-6">
+                <h4>Nombre Usuario</h4>
+            </div>
+            <div class="col-12 d-sm-none">
+                <a href="#">Salir</a>
+            </div>
+            <div class="col-12 col-sm-6 d-none d-sm-block">
+                <a class="salir" href="#">Salir</a>
+            </div>
+        </nav>
 
-      <div class="cerrar" id="cerrar-toggle"><span id="cerrar-sidebar"></span></div>
+        <section class="row">
+            <div class="col">Luminaria #</div>
+            <div class="col">Ubicacion</div>
+        </section>
 
-      <div class="sidebar-heading">
-        <img class="icono-perfil" src="img/pngocean.com.png">
-        <h3><b>Admin</b></h3>
-      </div>
+        <section class="row border-top">
+            <div class="col-6">Luminaria 1</div>
+            <div class="col-6">Mecatronica</div>
+            <div class="col-12">
+                <!-- Mostrar - Ocultar INFORMACION -->
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#datos"
+                        aria-expanded="false" aria-controls="datos">
+                        Ver Mas
+                    </button>
+                </p>
+                <div class="collapse" id="datos">
+                    <div class="card card-body">
+                        <section class="row">
+                            <div class="col">
+                                <h3>Variables</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="table-responsive sm">
+                                            <table class="table">
+                                                <thead>
+                                                    <th scope="col">Corriente</th>
+                                                    <th scope="col">voltaje</th>
+                                                    <th scope="col">Potencia</th>
+                                                    <th scope="col">Consumo [Wh]</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> --- </td>
+                                                        <td> --- </td>
+                                                        <td> --- </td>
+                                                        <td> --- </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-      <div class="items-sidebar list-group list-group-flush">
+                        <section class="row">
+                            <div class="col">
+                                <h3>Consumo</h3>
+                                <div class="row">
+                                    <div class="col d-sm-none">
+                                        <canvas id="MiGrafica" width="400" height="240"></canvas>
+                                    </div>
 
-        <a href="index.html" class="list-group-item sidebar-item"><span class="icon-sun"></span> Luminarias</a>
+                                    <div class="col d-none d-sm-block">
+                                        <canvas id="MiGrafica2" width="150" height="50"></canvas>
+                                    </div>
 
-        <a href="variables.html" class="list-group-item sidebar-item"><span class="icon-stats-bars"></span> Variables</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <a href="consumo.html" class="list-group-item sidebar-item"><span class="icon-stats-dots"></span> Consumo</a>
+        <section class="row border-top">
+            <div class="col-6">Luminaria 2</div>
+            <div class="col-6">Metalmecanica</div>
+            <div class="col-12">
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#datos2"
+                        aria-expanded="false" aria-controls="datos2">
+                        Ver Mas
+                    </button>
+                </p>
+                <div class="collapse" id="datos2">
+                    <div class="card card-body">
+                        <section class="row">
+                            <div class="col">
+                                <h3>Variables</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="table-responsive sm">
+                                            <table class="table">
+                                                <thead>
+                                                    <th scope="col">Corriente</th>
+                                                    <th scope="col">voltaje</th>
+                                                    <th scope="col">Potencia</th>
+                                                    <th scope="col">Consumo [Wh]</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> --- </td>
+                                                        <td> --- </td>
+                                                        <td> --- </td>
+                                                        <td> --- </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-      </div>
-      <div class="sidebar-footer">
-        <img src="img/SENA-Logo.png">
-      </div>
+                        <section class="row">
+                            <div class="col">
+                                <h3>Consumo</h3>
+                                <div class="row">
+                                    <div class="col d-sm-none">
+                                        <canvas id="MiGrafica3" width="200" height="120"></canvas>
+                                    </div>
+
+                                    <div class="col d-none d-sm-block">
+                                        <canvas id="MiGrafica4" width="150" height="50"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <!-- Contenido de la Pagina -->
-    <div id="page-content-wrapper">
+    <!-- Bootstrap -->
+    <script src="js/bootstrap/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- --------- -->
+    <script>
+        let grafica = document.getElementById("MiGrafica").getContext("2d");
+        let grafica2 = document.getElementById("MiGrafica2").getContext("2d");
+        let grafica3 = document.getElementById("MiGrafica3").getContext("2d");
+        let grafica4 = document.getElementById("MiGrafica4").getContext("2d");
 
-      <nav class="navbar navbar-light bg-light border-bottom">
-        <div id="menu-toggle"><span id="abrir-sidebar"></span></div>
+        var chart = new Chart(grafica, {
+            type: 'line',
+            data: {
+                labels: ["", "11:06", "11:07", "11:08", "11:09", "11:10", "11:11", "11:12", "11:13"],
+                datasets: [{
+                    label: "Consumo",
+                    backgorundColor: "rgb(0,0,0)",
+                    data: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6]
+                }]
+            }
+        });
 
-        <div class="links" id="navbarSupportedContent">
-          <ul>
-            <li><a href="#">Salir</a></li>
-          </ul>
-        </div>
-      </nav>
+        var chart = new Chart(grafica2, {
+            type: 'line',
+            data: {
+                labels: ["", "11:06", "11:07", "11:08", "11:09", "11:10", "11:11", "11:12", "11:13"],
+                datasets: [{
+                    label: "Consumo",
+                    backgorundColor: "rgb(0,0,0)",
+                    data: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6]
+                }]
+            }
+        });
 
-      <!-- Luminarias -->
-      <div class="container-fluid">
-        <h1 class="mt-4">Luminarias</h1>
-        <main>
-          <form action="" method="" id="formulario" class="formulario">
-            <input type="text" name="nombre" id="nombre" placeholder="Luminaria #">
-            <input type="text" name="nombre" id="nombre" placeholder="Dia/Mes/Año">
-            <input type="text" name="nombre" id="nombre" placeholder="Ubicación">
-            <button type="submit" class="btn">Agregar</button>
-          </form>
-          <div class="error_box" id="error_box">
-            <p>Se ha producido un error.</p>
-          </div>
-          <table id="tabla" class="tabla">
-            <thead class="tablehead">
-              <th>Luminaria #</th>
-              <th>Dia/Mes/Año</th>
-              <th>Ubicación</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Luminaria 1</td>
-                <td>10/10/2020</td>
-                <td>Mecatronica</td>
-              </tr>
-              <tr>
-                <td>Luminaria 2</td>
-                <td>10/10/2020</td>
-                <td>Parquadero</td>
-              </tr>
-              <tr>
-                <td>Luminaria 3</td>
-                <td>10/10/2020</td>
-                <td>Metalmecanica</td>
-              </tr>
-              
-            </tbody>
-            
-          </table>
-          <div class="loader" id="loader"></div>
-          <div class="cargar-datos">
-            <button id="btn_cargar_datos">Cargar Datos</button>
-          </div>
-        </main>
-      </div>
-      <!-- Fin Luminarias -->
 
-    </div>
 
-  </div>
+        var chart = new Chart(grafica3, {
+            type: 'line',
+            data: {
+                labels: ["", "11:06", "11:07", "11:08", "11:09", "11:10", "11:11", "11:12", "11:13"],
+                datasets: [{
+                    label: "Consumo",
+                    backgorundColor: "rgb(0,0,0)",
+                    data: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6]
+                }]
+            }
+        });
 
-  <!-- Bootstrap JavaScript -->
-  <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="js/bootstrap/jquery.min.js"></script>
-
-  <!-- Activacion - Desactivacion Sidabar -->
-  <script>
-    var estado = 0;
-    document.getElementById("abrir-sidebar").classList.add("icon-menu");
-    document.getElementById("menu-toggle").addEventListener('click', function (e) {
-      e.preventDefault(e);
-      if (estado == 0) {
-        document.getElementById("wrapper").classList.add("toggled");
-        document.getElementById("abrir-sidebar").classList.add("icon-menu");
-        estado = 1;
-      } else {
-        document.getElementById("wrapper").classList.remove("toggled");
-        document.getElementById("abrir-sidebar").classList.add("icon-menu");
-        estado = 0;
-      }
-    });
-  </script>
+        var chart = new Chart(grafica4, {
+            type: 'line',
+            data: {
+                labels: ["", "11:06", "11:07", "11:08", "11:09", "11:10", "11:11", "11:12", "11:13"],
+                datasets: [{
+                    label: "Consumo",
+                    backgorundColor: "rgb(0,0,0)",
+                    data: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6]
+                }]
+            }
+        });
+    </script>
 </body>
 
 </html>
